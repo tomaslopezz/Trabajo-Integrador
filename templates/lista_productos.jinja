@@ -1,0 +1,40 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered  w-100">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Producto</th>
+                                <th>Precio</th>
+                                <th>Stock actual</th>
+                                <th>Proveedor</th>
+                            </tr>
+                            <tbody>
+                                {% for producto in productos %}
+                                <tr>
+                                    <td>{{ producto.id }}</td>
+                                    <td>{{ producto.nombre }}</td>
+                                    <td>{{ producto.precio }}</td>
+                                    <td>{{ producto.stock_actual }}</td>
+                                    <td>{{ producto.proveedor }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="{{ 'crear_producto' }}" class="btn btn-outline-dark">Agregar producto</a> 
+        </div>
+    </div>
+
+    
+{% endblock %}

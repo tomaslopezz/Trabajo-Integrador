@@ -1,0 +1,36 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+<div class="container d-flex flex-column align-items-center">
+    <h2>Ingresar un producto</h2>
+    <form method="post">
+        <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+        <div class="form-group">
+          <label for="{{ form.nombre.id_for_label }}">Nombre:</label>
+          {{ form.nombre }}
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="{{ form.precio.id_for_label }}">Precio:</label>
+          {{ form.precio }}
+        </div>
+        <br>
+        <div class="form-group">
+            <label for="{{ form.stock_actual.id_for_label }}">Stock Actual:</label>
+            {{ form.stock_actual }}
+        </div>
+          <br>
+        <div class="form-group">
+            <label for="{{ form.proveedor.id_for_label }}">Proveedor:</label>
+            {{ form.proveedor }}
+        </div>
+        <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-outline-dark">Guardar</button>
+            <a href="{{ 'lista_productos' }}" >Volver al listado</a>
+        </div>
+      </form>
+</div>
+
+  
+{% endblock %}

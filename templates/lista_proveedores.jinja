@@ -1,0 +1,38 @@
+{% extends 'base.jinja' %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-responsive">
+                    <table class="table table-bordered  w-100">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Apellido</th>
+                                <th>DNI</th>
+                            </tr>
+                            <tbody>
+                                {% for proveedor in proveedores %}
+                                <tr>
+                                    <td>{{ proveedor.id }}</td>
+                                    <td>{{ proveedor.nombre }}</td>
+                                    <td>{{ proveedor.apellido }}</td>
+                                    <td>{{ proveedor.dni }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="{{ 'crear_proveedor' }}" class="btn btn-outline-dark">Agregar proveedor</a> 
+        </div>
+    </div>
+
+    
+{% endblock %}
